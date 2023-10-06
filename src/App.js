@@ -1,10 +1,10 @@
 import LoginPage from './containers/LoginPage';
-import HomePage from './containers/HomePage'
+import LayoutComponent from './containers/LayoutComponent'
 import './App.css';
 
 function App() {
   return (
-   <HomePage/>
+   <LayoutComponent/>
   );
 }
 
