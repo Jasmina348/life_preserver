@@ -1,10 +1,13 @@
 import LoginPage from './containers/LoginPage';
-import HomePage from './containers/HomePage'
+import RegisterPage from './containers/RegisterPage';
+import HomePage from './containers/HomePage';
+import NavBar from './components/NavBar';
 import './App.css';
+
 
 function App() {
   return (
-   <HomePage/>
+   <NavBar/>
   );
 }
 
