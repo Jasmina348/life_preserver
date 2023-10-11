@@ -44,7 +44,7 @@ const LoginPage = () => (
       <Row
         style={{
           height: 300,
-          // width: 500,
+          width: 500,
           margin: "10%",
           position: "absolute",
         }}

@@ -23,12 +23,12 @@ export default function QuizPage() {
     <form action="/action_page.php">
         <p className="question"> 1. Please select your favorite Web language:</p>
         
-        <input type="radio" id="html" name="fav_language" value="HTML"/>
-        <label for="html">HTML</label>
-        <input type="radio" id="css" name="fav_language" value="CSS"/>
-        <label for="css">CSS</label>
-        <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
-        <label for="javascript">JavaScript</label>
+        <input className="input" type="radio" id="html" name="fav_language" value="HTML"/>
+        <label className='formlabel' for="html">HTML</label>
+        <input className="input" type="radio" id="css" name="fav_language" value="CSS"/>
+        <label className='formlabel' for="css">CSS</label>
+        <input className="input" type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+        <label className='formlabel' for="javascript">JavaScript</label>
         <button type="submit" className="submit-button" id="subbtn">Submit</button>
     </form>
     </div>    
