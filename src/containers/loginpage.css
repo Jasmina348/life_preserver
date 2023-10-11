@@ -43,15 +43,8 @@ input {
   font-size: 17px;
 }
 
-span {
-  user-select: none;
-  margin: 5px;
-  color: rgb(172, 172, 172);
-  background: rgba(85, 81, 81, 0.637);
-  padding: 5px;
-  border-radius: 18px;
-}
-button[type="submit"] {
+
+/* button[type="submit"] {
   width: 180px;
   font-size: 20px;
   margin: 10px auto;
@@ -59,7 +52,7 @@ button[type="submit"] {
   background: rgba(116, 122, 123, 0.72);
   border: none;
   color: white;
-}
+} */
 button[type="submit"]:hover {
   background: rgba(222, 236, 34, 0.678);
 }

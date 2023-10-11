@@ -1,14 +1,25 @@
-import LoginPage from './containers/LoginPage';
-import LayoutComponent from './containers/LayoutComponent'
-import RegisterPage from './containers/RegisterPage';
-import NavBar from './components/NavBar';
-import './App.css';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ContentPage from "./containers/ContentPage";
+import LoginPage from "./containers/LoginPage";
+import HomePage from "./containers/HomePage";
+import LayoutComponent from "./components/LayoutComponent";
+import ModulePage from "./containers/ModulePage";
 
-
-function App() {
+export default function App() {
   return (
-   <LayoutComponent/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<LoginPage />} />
+        <Route path="/" element={<LayoutComponent />}>
+          <Route index element={<ContentPage />} />
+          <Route path="courses" element={<ContentPage />} />
+          <Route path="module" element={<ModulePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
