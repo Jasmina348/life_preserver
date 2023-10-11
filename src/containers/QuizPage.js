@@ -18,7 +18,7 @@ export default function QuizPage() {
 
   return (
     <>
-    <NavBar/>
+
     <div className="quiz-container">
     <form action="/action_page.php">
         <p className="question"> 1. Please select your favorite Web language:</p>

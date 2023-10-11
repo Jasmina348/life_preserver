@@ -7,10 +7,11 @@ import {
   MessageOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme ,Image} from 'antd';
+import { Layout, Menu, Button, theme ,Image,MenuProps} from 'antd';
 import ContentPage from '../containers/ContentPage';
 import ModulePage from '../containers/ModulePage';
 import { Outlet, Link } from "react-router-dom";
+import NavBar from './NavBar';
 
 const { Header, Sider, Content } = Layout;
 
@@ -31,7 +32,7 @@ const LayoutComponent = () => {
   }
   const items = [
     getItem( 
-      <Link to="/home">Home</Link>
+      <Link to="/">Home</Link>
     , '1', < HomeOutlined/>),
     getItem("Courses", 'sub1', <BookOutlined />, [
       getItem(<Link to="/module">Module 1</Link>, '3'),
@@ -41,8 +42,15 @@ const LayoutComponent = () => {
     getItem('Get involved Forum', '6', < MessageOutlined/>),
     getItem('FAQS', '7', < VideoCameraOutlined/>),
   ];
+ 
+
   return (
     <Layout>
+          <Header ><NavBar/></Header>
+          <Layout hasSider>
+
+      
+     
       <Sider trigger={null} collapsible collapsed={collapsed} style={{background:"white"}}>
         <div className="demo-logo-vertical" />
         <Menu
@@ -83,6 +91,7 @@ const LayoutComponent = () => {
         <Outlet />
 
       </Content>
+      </Layout>
       </Layout>
     </Layout>
   );

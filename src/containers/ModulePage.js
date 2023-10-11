@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Typography, Button } from "antd";
 import { CameraVideo, JournalText } from "react-bootstrap-icons";
+import { Outlet, Link } from "react-router-dom";
 const { Title, Paragraph } = Typography;
 
 export default function ModulePage() {
@@ -58,7 +59,7 @@ export default function ModulePage() {
               Put your skills to the test. Take our quiz and see  how much you 
               remember from your first class. It's a multiple choice questions.
             </Paragraph>
-            <Button> Take Quiz</Button>
+            <Button> <Link to="/quiz">Take Quiz</Link></Button>
           </Col>
         </Row></Col>
     </Row>
