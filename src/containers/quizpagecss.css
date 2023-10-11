@@ -14,17 +14,17 @@
   }
   
   /* Styles for the radio buttons and labels */
-  input[type="radio"] {
+  .input[type="radio"] {
     display: none;
   }
   
-  label {
+.formlabel {
     display: block;
     margin-bottom: 5px;
     cursor: pointer;
   }
   
-  label::before {
+  .formlabel::before {
     content: " ";
     display: inline-block;
     width: 20px;
@@ -36,7 +36,7 @@
     transition: background-color 0.3s;
   }
   
-  input[type="radio"]:checked + label::before {
+  .input[type="radio"]:checked + label::before {
     background-color: #007BFF;
     border-color: #007BFF;
   }
