@@ -27,7 +27,7 @@ export default function NavBar() {
             <Nav.Link href="#pricing">Services</Nav.Link>
             <Nav.Link href="#pricing">Contact US</Nav.Link>
             <Nav.Link href="#pricing">Toronto FC </Nav.Link>
-            <Nav.Link href="#pricing">Logout</Nav.Link>
+            <Nav.Link href="#pricing">Contact US</Nav.Link>
             
           </Nav>
           </Navbar.Collapse>
