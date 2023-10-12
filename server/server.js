@@ -3,7 +3,9 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const mongoString ="mongodb://127.0.0.1:27017/LifePreserver";
-const userRouter = require('./routes/userRoutes');
+const userRouter = require('./routes/userRoute');
+
+
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;

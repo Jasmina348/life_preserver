@@ -13,9 +13,34 @@ import picture1 from "../static/images/cpr02.webp";
 
 const {Title, Paragraph}=Typography;
 
-const onFinish = (values) => {
-console.log(values)
-};
+
+const onFinish = async(values)=>{
+  const { username, password } = values;
+
+  try{
+    const response = await fetch('http://localhost:3001/login', {
+      method: 'POST',
+      crossDomain:true,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      const token = data.token;
+
+    } else {
+      console.error('Login failed');
+    }
+  }catch(error) {
+      console.error('An error occurred', error);
+    }
+}
+
+
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
