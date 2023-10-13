@@ -3,14 +3,56 @@ import "./loginpage.css";
 import picture1 from "../static/images/cpr02.webp";
 
 import {
-    Row,
-  } from "antd";
+  Row,
+  Button,
+  Typography,
+  Form,
+  Input
+} from "antd";
+const onFinish = async(values)=>{
+  const { fullname, email, phoneno,address, password} = values;
 
+  try{
+    const response = await fetch('http://localhost:3001/api/signup', {
+      method: 'POST',
+      crossDomain:true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept:"application/json",
+        "Access-Control-Allow-Origin":"*"
+      },
+      body: JSON.stringify({ 
+        fullname, 
+        email,
+        address,
+        phoneno ,
+        password 
+      }),
+    })
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      const token = data.token;
+
+    } else {
+      console.error('Register failed');
+    }
+  }catch(error) {
+      console.error('An error occurred', error);
+    }
+}
+
+
+const onFinishFailed = (errorInfo) => {
+  console.log('Failed:', errorInfo);
+};
+const {Title}=Typography;
 const RegisterPage = () => (
     <>
      <div
       style={{
-        height: "100%",
+        height: "80%",
         display: "flex",
         justifyContent: "center",
         position: "relative",
@@ -30,42 +72,100 @@ const RegisterPage = () => (
       ></img>
       <Row
         style={{
-          height: 300,
+          height: 200,
           width: 500,
-          marginTop:'5%',
+          marginTop:'2%',
           position: "absolute",
         }}
       >
     <div className="container">
-    <h2>Sign Up</h2>
-    <form action="">
+    <Title level={2}>Sign Up</Title>
+    <Form
+    name="basic"
+    labelCol={{
+      span: 24,
+    }}
+    wrapperCol={{
+      span: 24,
+    }}
+    initialValues={{
+      remember: true,
+    }}
+    style={{padding:"8px",marginBottom:"8px"}}
+    layout="vertical"
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed}
+    autoComplete="off"
+  >
 
-      <div className="form-item">
+    <Form.Item
+      label="Full Name"
+      name="fullname"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your Full Name!',
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+    <Form.Item
+      label="Email"
+      name="email"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your email!',
+        },
+      ]}
+    >
+    <Input />
+    </Form.Item>
+    <Form.Item
+      label="Address"
+      name="address"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your Address!',
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
         
-        <input type="text" name="user" id="name" placeholder="Full Name"/>
-      </div>
-      <div className="form-item">
-        <input type="text" name="user" id="email" placeholder="Email"/>
-      </div>
-      <div className="form-item">
-        <input type="text" name="user" id="phoneno" placeholder="Phone No"/>
-      </div>
-      <div className="form-item">
-        <input type="text" name="user" id="address" placeholder="Address"/>
-      </div>
-      <div className="form-item">
-        <input type="password" name="pass" id="pass" placeholder="Password"/>
-      </div>
-      <div className="form-item">
-        <input type="password" name="pass" id="pass" placeholder=" Confirm Password"/>
-      </div>
-      
+    
 
-      <button type="submit">Register</button>
-
-      <p style={{marginBottom:10}}>Already Have a Account ? <a href="#"> Log in</a></p>
-
-    </form>
+    <Form.Item
+      label="Phone No."
+      name="phoneno"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your Phone Number!',
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+    <Form.Item
+      label="password"
+      name="password"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your Password!',
+        },
+      ]}
+    >
+      <Input.Password />
+    </Form.Item>
+    
+    <Form.Item wrapperCol={{ span: 14, offset: 4 } }>
+    <Button type="primary" shape="round" htmlType="submit">Register</Button>
+    </Form.Item>
+</Form>
   </div>
       </Row>
     </div>

@@ -7,15 +7,42 @@ import {
   Input
 } from "antd";
 
-import RegisterPage from './RegisterPage';
+
 import "./loginpage.css";
 import picture1 from "../static/images/cpr02.webp";
 
-const {Title, Paragraph}=Typography;
+const {Title}=Typography;
 
-const onFinish = (values) => {
-console.log(values)
-};
+
+const onFinish = async(values)=>{
+  const { email, password } = values;
+
+  try{
+    const response = await fetch("http://localhost:3001/api/login", {
+      method: 'POST',
+      crossDomain:true,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      sessionStorage.setItem("token", data.token);
+      window.location.replace("/")
+   
+      
+
+    } else {
+      console.error('Login failed');
+    }
+  }catch(error) {
+      console.error('An error occurred', error);
+    }
+}
+
+
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
@@ -70,12 +97,12 @@ const LoginPage = () => (
   >
 
     <Form.Item
-      label="Username"
-      name="username"
+      label="email"
+      name="email"
       rules={[
         {
           required: true,
-          message: 'Please input your username!',
+          message: 'Please input your Email!',
         },
       ]}
     >
@@ -101,7 +128,7 @@ const LoginPage = () => (
 
       
 
-      <div style={{marginBottom:10}}>New User ? <a href="#"> Create an Account</a></div>
+      <div style={{marginBottom:10}}>New User ? <a href="/register"> Create an Account</a></div>
 
     </Form>
   </div>

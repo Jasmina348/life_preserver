@@ -7,20 +7,22 @@ const router = express.Router();
 router.post("/signup", async (req, res) => {
   try {
     const dublicateData = await Model.findOne({
-      username: req.body.username,
+      email: req.body.email,
     });
     if (dublicateData) {
-      res.status(400).json({ message: "Username already exist" });
+      res.status(400).json({ message: "Email already exist" });
     } else {
       const data = new Model({
         fullname: req.body.fullname,
-        username: req.body.username,
+        email: req.body.email,
+        phoneno: req.body.phoneno,
+        address: req.body.address,
         password: req.body.password,
       });
       const dataToSave = await data.save();
       const token = jwt.sign(
         {
-          username: dataToSave.username,
+          email: dataToSave.email,
           fullname: dataToSave.fullname,
           id: dataToSave._id.toString(),
         },
@@ -41,16 +43,17 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     let user = await Model.findOne({
-      username: req.body.username,
+      email: req.body.email,
       password: req.body.password,
     });
 
     if (user) {
       const token = jwt.sign(
         {
-          username: user.username,
+          email: user.email,
           fullname: user.fullname,
           id: user._id.toString(),
+          status: user.status,
         },
         "LifePreserverT0ken"
       );
@@ -58,7 +61,7 @@ router.post("/login", async (req, res) => {
         token: token,
       });
     } else {
-      res.status(404).json({ message: "Username or Password not found" });
+      res.status(404).json({ message: "Email or Password not found" });
       // stop further execution in this callback
       return;
     }
@@ -73,13 +76,27 @@ router.patch("/update/:id", async (req, res) => {
     const updatedData = req.body;
     const options = { new: true };
     let user = await Model.findById(id);
-    const result = await Model.findByIdAndUpdate(
-      id,
-      { products: [...user.products,updatedData] },
-      options
+    const result = await Model.findByIdAndUpdate(id, {
+      status: "user",
+      card_holder_name: updatedData.card_holder_name,
+      card_number: updatedData.card_number,
+      expriry_date: updatedData.expriry_date,
+      cvv: updatedData.cvv,
+    });
+    const token = jwt.sign(
+      {
+        email: result.email,
+        fullname: result.fullname,
+        id: result._id.toString(),
+        status:result.status
+      },
+      "LifePreserverT0ken",
+      {
+        expiresIn: "2h",
+      }
     );
     res.status(200).json({
-      result,
+      token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
