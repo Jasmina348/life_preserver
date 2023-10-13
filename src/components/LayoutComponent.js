@@ -13,7 +13,7 @@ import { Layout, Menu, Button, theme, Image, MenuProps } from "antd";
 import { Outlet, Link } from "react-router-dom";
 
 
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content, Footer } = Layout;
 
 const LayoutComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -125,6 +125,56 @@ const LayoutComponent = () => {
         </Layout>
       </Layout>
     </Layout>
+    // <Layout>
+    //       <Header ><NavBar/></Header>
+    //       <Layout hasSider>
+
+      
+     
+    //   <Sider trigger={null} collapsible collapsed={collapsed} style={{background:"white"}}>
+    //     <div className="demo-logo-vertical" />
+    //     <Menu
+    //     //   theme="dark"
+    //       mode="inline"
+    //       defaultSelectedKeys={['1']}
+    //       defaultOpenKeys={['sub1']}
+    //       items={items}
+    //     />
+    //   </Sider>
+    //   <Layout>
+    //     <Header
+    //       style={{
+    //         padding: 0,
+    //         background: colorBgContainer,
+    //       }}
+    //     >
+    //       <Button
+    //         type="text"
+    //         icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+    //         onClick={() => setCollapsed(!collapsed)}
+    //         style={{
+    //           fontSize: '16px',
+    //           width: 64,
+    //           height: 64,
+    //         }}
+    //       />
+    //     </Header>
+    //     <Content
+    //       style={{
+    //         margin: '24px 16px',
+    //         padding: 24,
+    //         minHeight: 500,
+    //         // background: colorBgContainer,
+    //       }}
+    //     >
+    //     {/* <ContentPage/> */}
+    //     <Outlet />
+
+    //   </Content>
+    //   <Footer style={{ textAlign: 'center' }}>Life Preserver ©2023</Footer>
+    //   </Layout>
+    //   </Layout>
+    // </Layout>
   );
 };
 export default LayoutComponent;
