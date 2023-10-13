@@ -10,10 +10,8 @@ import {
 import logo from "../static/images/LifePreserver.png";
 
 import { Layout, Menu, Button, theme, Image, MenuProps } from "antd";
-import ContentPage from "../containers/ContentPage";
-import ModulePage from "../containers/ModulePage";
 import { Outlet, Link } from "react-router-dom";
-import NavBar from "./NavBar";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -22,6 +20,11 @@ const LayoutComponent = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const handleLogout=()=>{
+    localStorage.removeItem("token");
+    window.location.replace("/login")
+  }
 
   function getItem(label, key, icon, children, type) {
     return {
@@ -43,6 +46,7 @@ const LayoutComponent = () => {
     getItem("FAQS", "7", <VideoCameraOutlined />),
   ];
   const items1 = [
+
     {
       label: "About Us",
       key: "1",
@@ -55,10 +59,7 @@ const LayoutComponent = () => {
       label: "Contact Us",
       key: "3",
     },
-    {
-      label: "Logout",
-      key: "4",
-    },
+    getItem(<span onClick={()=>handleLogout()}>LogOut</span>),
   ];
   return (
     <Layout>
@@ -74,7 +75,7 @@ const LayoutComponent = () => {
             }}
           />
         </div> */}
-        <Menu mode="horizontal" items={items1} />;
+        <Menu style={{float:"right"}} theme="dark" mode="horizontal" items={items1} />;
       </Header>
       <Layout hasSider>
         <Sider

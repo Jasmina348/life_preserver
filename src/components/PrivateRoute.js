@@ -56,8 +56,9 @@ export default function PrivateRoute(props) {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    window.location.replace("/")
   };
-  console.log(decodedToken)
+ 
   return (
     <>
       {decodedToken.status === "user" ? (
