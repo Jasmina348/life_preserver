@@ -78,6 +78,7 @@ const ContactUsPage = () => (
     <Form
     {...layout}
     name="nest-messages"
+    layout='vertical'
     onFinish={onFinish}
     style={{
       maxWidth: 600,
@@ -114,7 +115,7 @@ const ContactUsPage = () => (
     <Form.Item
       wrapperCol={{
         ...layout.wrapperCol,
-        offset: 8,
+        offset: 2.5,
       }}
     >
       <Button type="primary" htmlType="submit">
