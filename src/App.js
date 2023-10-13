@@ -5,7 +5,8 @@ import LoginPage from "./containers/LoginPage";
 import RegisterPage from "./containers/RegisterPage";
 import LayoutComponent from "./components/LayoutComponent";
 import ModulePage from "./containers/ModulePage";
-import QuizPage from './containers/QuizPage'
+import QuizPage from './containers/QuizPage';
+import ContactUsPage from "./containers/ContactUsPage";
 
 export default function App() {
   return (
@@ -13,11 +14,14 @@ export default function App() {
       <Routes>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+        
         <Route path="/" element={<LayoutComponent />}>
           <Route index element={<ContentPage />} />
           <Route path="courses" element={<ContentPage />} />
           <Route path="module" element={<ModulePage />} />
           <Route path="quiz" element={<QuizPage />} />
+          <Route path="contactus" element={<ContactUsPage/>}/>
+          
         </Route>
       </Routes>
     </BrowserRouter>
