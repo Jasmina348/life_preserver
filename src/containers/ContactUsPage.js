@@ -61,16 +61,16 @@ const ContactUsPage = () => (
       style={{
         height: "100%",
         display: "flex",
-        justifyContent: "left",
+        justifyContent: "center",
         position: "relative",
       }}
     >
       <Row
         style={{
           height: 200,
-          width: 600,
-          marginTop:'2%',
-          position: "absolute",
+          width: "100%",
+          // marginTop:'2%',
+          // position: "absolute",
         }}
       >
             <div className="container">
@@ -81,24 +81,26 @@ const ContactUsPage = () => (
     layout='vertical'
     onFinish={onFinish}
     style={{
-      maxWidth: 600,
+      maxWidth: 500,
     }}
     validateMessages={validateMessages}
   >
     <Form.Item
       name="fullname"
       label=" Full Name"
+      style={{width:"100%"}}
       rules={[
         {
           required: true,
         },
       ]}
     >
-      <Input />
+      <Input style={{width:"100%"}} />
     </Form.Item>
     <Form.Item
       name="email"
       label="Email"
+      style={{width:"100%"}}
       rules={[
         {
           type: 'email',
@@ -106,7 +108,7 @@ const ContactUsPage = () => (
         },
       ]}
     >
-      <Input />
+      <Input style={{width:"100%"}}/>
       </Form.Item>
 
     <Form.Item name="messages" label="Message">

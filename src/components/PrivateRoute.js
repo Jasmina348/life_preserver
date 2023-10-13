@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { Route, Outlet } from "react-router";
-import { Modal, Form, Input, InputNumber, DatePicker, Row, Col } from "antd";
+import {
+  Modal,
+  Alert,
+  Form,
+  Input,
+  InputNumber,
+  DatePicker,
+  Row,
+  Col,
+  Divider
+} from "antd";
 import jwt_decode from "jwt-decode";
 import LoginPage from "../containers/LoginPage";
 
 export default function PrivateRoute(props) {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [token, setToken] = useState(window.sessionStorage.getItem("token"))
-
-
+  const [token, setToken] = useState(window.sessionStorage.getItem("token"));
 
   const decodedToken = jwt_decode(token);
   const [form] = Form.useForm();
@@ -36,12 +44,10 @@ export default function PrivateRoute(props) {
 
           if (response.ok) {
             const data = await response.json();
-            
-            sessionStorage.setItem("token", data.token);
-            setToken(data.token)
-            window.location.reload();
 
-         
+            sessionStorage.setItem("token", data.token);
+            setToken(data.token);
+            window.location.reload();
           } else {
             console.error("Login failed");
           }
@@ -56,9 +62,9 @@ export default function PrivateRoute(props) {
 
   const handleCancel = () => {
     setIsModalOpen(false);
-    window.location.replace("/")
+    window.location.replace("/");
   };
- 
+
   return (
     <>
       {decodedToken.status === "user" ? (
@@ -70,13 +76,22 @@ export default function PrivateRoute(props) {
           onOk={handleOk}
           onCancel={handleCancel}
         >
+          <Row gutter={[8,8]}>
+            <Col span={24}>
+              <Alert message="Monthly Plan" type="success"    action="$50/mon"  />
+            </Col>
+            <Col span={24}>
+              <Alert message="Yearly Plan" type="info" action="$30/mon"/>
+            </Col>
+          </Row>
+          <Divider />
           <Form
             form={form}
             layout="vertical"
             centered={true}
             style={{ width: "100%" }}
           >
-            <Row gutter={24}>
+            <Row gutter={[8,8]}>
               <Col span={12}>
                 <Form.Item
                   label="Name on the Card"

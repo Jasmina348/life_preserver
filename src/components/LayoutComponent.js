@@ -12,7 +12,6 @@ import logo from "../static/images/LifePreserver.png";
 import { Layout, Menu, Button, theme, Image, MenuProps } from "antd";
 import { Outlet, Link } from "react-router-dom";
 
-
 const { Header, Sider, Content, Footer } = Layout;
 
 const LayoutComponent = () => {
@@ -21,10 +20,10 @@ const LayoutComponent = () => {
     token: { colorBgContainer },
   } = theme.useToken();
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.replace("/login")
-  }
+    window.location.replace("/login");
+  };
 
   function getItem(label, key, icon, children, type) {
     return {
@@ -38,15 +37,16 @@ const LayoutComponent = () => {
   const items = [
     getItem(<Link to="/">Home</Link>, "1", <HomeOutlined />),
     getItem("Courses", "sub1", <BookOutlined />, [
-      getItem(<Link to="/module">Module 1</Link>, "3"),
-      getItem(<Link to="/module">Module 2</Link>, "4"),
-      getItem(<Link to="/module">Module 3</Link>, "5"),
+      getItem(<Link to={`module/1`}>Module 1</Link>, "3"),
+      getItem(<Link to={`module/2`}>Module 2</Link>, "4"),
+      getItem(<Link to={`module/3`}>Module 3</Link>, "5"),
+      getItem(<Link to={`module/4`}>Module 4</Link>, "6"),
+      getItem(<Link to={`module/5`}>Module 5</Link>, "7"),
     ]),
     getItem("Get involved Forum", "6", <MessageOutlined />),
     getItem("FAQS", "7", <VideoCameraOutlined />),
   ];
   const items1 = [
-
     {
       label: "About Us",
       key: "1",
@@ -55,15 +55,13 @@ const LayoutComponent = () => {
       label: "Services",
       key: "2",
     },
-    {
-      label: "Contact Us",
-      key: "3",
-    },
-    getItem(<span onClick={()=>handleLogout()}>LogOut</span>),
+    getItem(<Link to="/contactus">Contact Us</Link>, "5"),
+    getItem(<span onClick={() => handleLogout()}>LogOut</span>),
   ];
   return (
     <Layout>
       <Header>
+       <span style={{fontSize:"20px",color:"white"}}>Jasmina</span>
         {/* <div className="demo-logo">
           <img
             alt=""
@@ -75,7 +73,13 @@ const LayoutComponent = () => {
             }}
           />
         </div> */}
-        <Menu style={{float:"right"}} theme="dark" mode="horizontal" items={items1} />;
+        <Menu
+          style={{ float: "right" }}
+          theme="dark"
+          mode="horizontal"
+          items={items1}
+        />
+        
       </Header>
       <Layout hasSider>
         <Sider
@@ -129,8 +133,6 @@ const LayoutComponent = () => {
     //       <Header ><NavBar/></Header>
     //       <Layout hasSider>
 
-      
-     
     //   <Sider trigger={null} collapsible collapsed={collapsed} style={{background:"white"}}>
     //     <div className="demo-logo-vertical" />
     //     <Menu

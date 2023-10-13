@@ -1,9 +1,11 @@
 {
     "modules": [
       {
+        "id":1,
         "module_title": "Module 1: CPR Basics",
         "description": "In this foundational module, you will embark on a life-saving journey, mastering the essential techniques of Cardiopulmonary Resuscitation (CPR). We explore the crucial components of CPR, including the correct method for chest compressions and the importance of swift intervention in emergency situations. Discover the significance of quality chest compressions and efficient rescue breaths. This module serves as your gateway to becoming a proficient CPR provider, ready to respond to cardiac emergencies with confidence and competence.",
         "video_link": "https://www.youtube.com/watch?v=Plse2FOkV4Q",
+        "video_description":"How to perform CPR - A Step-by-Step Guide",
         "quizzes": [
           {
             "question": "What is the recommended compression depth for adult CPR?",
@@ -23,9 +25,11 @@
         ]
       },
       {
+        "id":2,
         "module_title": "Module 2: CPR for Children",
         "description": "Module 2 delves into the world of CPR for children, focusing on the nuances and differences from adult CPR. You will learn the appropriate depth for chest compressions, the ideal compression rate, and the vital role of Automated External Defibrillators (AEDs) in pediatric emergencies. Gain the skills and knowledge needed to provide effective CPR for children, ensuring you can make a difference when it matters most.",
         "video_link": "https://www.youtube.com/watch?v=PJbJ5IFvtIg",
+        "video_description":"How to Provide Child CPR",
         "quizzes": [
           {
             "question": "What is the compression depth for child CPR?",
@@ -45,9 +49,11 @@
         ]
       },
       {
+        "id":3,
         "module_title": "Module 3: CPR for Infants",
         "description": "This module is dedicated to the specialized techniques required for performing CPR on infants. From the correct hand placement for chest compressions to the ideal depth of compressions and the recommended compression-to-ventilation ratio, you will become adept at infant CPR. Additionally, you'll learn about infant airway management, an essential aspect of infant resuscitation.",
         "video_link": "https://www.youtube.com/watch?v=gHZdBY-CkGw",
+        "video_description":"How to perform first aid and CPR on a choking infant / baby?",
         "quizzes": [
           {
             "question": "What is the correct hand placement for chest compressions in infant CPR?",
@@ -67,9 +73,11 @@
         ]
       },
       {
+        "id":4,
         "module_title": "Module 4: CPR for Choking",
         "description": " Module 4 focuses on assisting choking victims. You'll learn to recognize the signs of choking and how to respond effectively. Explore techniques such as back blows and chest thrusts and understand when to transition to CPR if the victim becomes unresponsive. This knowledge is invaluable in situations where quick action can save a life.",
         "video_link": "https://www.youtube.com/watch?v=06WXCWDaJps",
+        "video_description":"Conscious Adult Choking Practice",
         "quizzes": [
           {
             "question": "What is the first step in assisting a choking victim?",
@@ -89,9 +97,11 @@
         ]
       },
       {
+        "id":5,
         "module_title": "Module 5: CPR Certification",
         "description": " This module outlines the CPR certification process, covering practical assessments and written exams required to become a certified CPR provider. You'll gain insights into common certification organizations and learn how often certification should be renewed. Practical assessments will test your skills, while written exams assess your understanding of theoretical concepts. Upon completion, you'll be equipped with a CPR certification, demonstrating your readiness to assist in emergencies, whether at home, on the field, or in your community. Your training in these modules will empower you to make a difference when it counts the most.",
         "video_link": "https://www.youtube.com/watch?v=TPpiWG_HzkI",
+        "video_description":"Hands-only CPR Training",
         "quizzes": [
           {
             "question": "What is a common certification organization for CPR training?",
