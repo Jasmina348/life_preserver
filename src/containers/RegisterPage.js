@@ -34,12 +34,13 @@ const onFinish = async(values)=>{
       const data = await response.json();
       console.log(data);
       const token = data.token;
+      window.location.replace("/login")
 
     } else {
       console.error('Register failed');
     }
   }catch(error) {
-      console.error('An error occurred', error);
+      console.log('An error occurred', error);
     }
 }
 

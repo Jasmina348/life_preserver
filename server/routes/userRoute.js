@@ -18,6 +18,11 @@ router.post("/signup", async (req, res) => {
         phoneno: req.body.phoneno,
         address: req.body.address,
         password: req.body.password,
+        card_holder_name:' ',
+        card_number:'',
+        expiry_date:'',
+        cvv:'',
+        status:'',
       });
       const dataToSave = await data.save();
       const token = jwt.sign(
