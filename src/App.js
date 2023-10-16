@@ -19,8 +19,8 @@ export default function App() {
         <Route path="/" element={<LayoutComponent />}>
           <Route index element={<ContentPage />} />
           <Route path="courses" element={<PrivateRoute  element={<ContentPage/>}/>} />
-          <Route path="module" element={<PrivateRoute element={<ModulePage/>} />}/>
-          <Route path="quiz" element={<PrivateRoute element={<QuizPage/>} />}/>
+          <Route path="module/:id" element={<PrivateRoute element={<ModulePage/>} />}/>
+          <Route path="quiz/:id" element={<PrivateRoute element={<QuizPage/>} />}/>
           <Route path="contactus" element={<ContactUsPage/>}/>
         </Route>
       </Routes>

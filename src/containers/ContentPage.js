@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row,Col,Card,Typography,Button} from 'antd'
 import {JournalBookmarkFill,CalendarEvent,Book } from 'react-bootstrap-icons';
-
+import { Link } from "react-router-dom";
 
 const { Title, Paragraph } = Typography;
 export default function Contentpage() {
@@ -11,9 +11,11 @@ export default function Contentpage() {
       <Col span={24}  style={{height:400,background:"#e0ebeb",textAlign:"center"}}>
     <Title level={3} style={{marginTop:100}}>New Course</Title>
     <Title style={{marginTop:"4px"}}>Introduction to First Aid</Title>
-    <Button type="primary" ghost>
+    <Link to="/module/1">
+    <Button type="primary" ghost >
       Go To Course
     </Button>
+    </Link>
 
     </Col>
     <Col span={6}>

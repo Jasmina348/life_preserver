@@ -12,19 +12,21 @@ router.post("/signup", async (req, res) => {
     if (dublicateData) {
       res.status(400).json({ message: "Email already exist" });
     } else {
+      console.log("nepatma")
       const data = new Model({
         fullname: req.body.fullname,
         email: req.body.email,
         phoneno: req.body.phoneno,
         address: req.body.address,
         password: req.body.password,
-        card_holder_name:' ',
-        card_number:'',
-        expiry_date:'',
-        cvv:'',
-        status:'',
+        status:"guest",
+        card_holder_name:"",
+        card_number:"",
+        expiry_date:"",
+        cvv:""
       });
       const dataToSave = await data.save();
+     
       const token = jwt.sign(
         {
           email: dataToSave.email,

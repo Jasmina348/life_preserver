@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-  
     email: {
          required: true,
         type: String
     },
     password: {
+        required: true,
+        type: String
+    },
+    phoneno: {
         required: true,
         type: String
     },
@@ -19,19 +22,19 @@ const dataSchema = new mongoose.Schema({
         type: String
     },
     card_holder_name: {
-        required: true,
+        required: false,
         type: String
     },
      card_number: {
-        required: true,
+        required: false,
         type: String
     },
     expiry_date: {
-        required: true,
+        required: false,
         type: Date
     },
     cvv: {
-        required: true,
+        required: false,
         type: String
     }
 })
