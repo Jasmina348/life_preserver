@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import logo from "../static/images/LifePreserver.png";
 
-import { Layout, Menu, Button, theme, Image, MenuProps } from "antd";
+import { Layout, Menu, Button, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
 
 const { Header, Sider, Content, Footer } = Layout;

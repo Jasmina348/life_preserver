@@ -67,7 +67,8 @@ export default function PrivateRoute(props) {
 
   return (
     <>
-      {decodedToken.status === "user" ? (
+    {token ? 
+      decodedToken.status === "user" ? (
         props.element
       ) : (
         <Modal
@@ -143,7 +144,9 @@ export default function PrivateRoute(props) {
             </Row>
           </Form>
         </Modal>
-      )}
+      )
+           :
+           <div></div>     }
     </>
   );
 }
