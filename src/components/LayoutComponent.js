@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+
+import jwt_decode from 'jwt-decode';
+
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -16,6 +20,10 @@ const { Header, Sider, Content, Footer } = Layout;
 
 const LayoutComponent = () => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const token = window.sessionStorage.getItem("token");
+  const decodedToken = jwt_decode(token);
+  console.log(decodedToken);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -62,7 +70,7 @@ const LayoutComponent = () => {
   return (
     <Layout>
       <Header>
-       <span style={{fontSize:"20px",color:"white"}}>Jasmina</span>
+       <span style={{fontSize:"20px",color:"white"}}>Tanka</span>
         {/* <div className="demo-logo">
           <img
             alt=""
