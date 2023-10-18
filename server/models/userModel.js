@@ -36,7 +36,13 @@ const dataSchema = new mongoose.Schema({
     cvv: {
         required: false,
         type: String
+    },
+    progress:{
+        required:false,
+        type:Object
+
     }
+
 })
 
 module.exports = mongoose.model('User', dataSchema)

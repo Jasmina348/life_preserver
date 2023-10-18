@@ -20,7 +20,7 @@ export default function PrivateRoute(props) {
 
   const decodedToken = jwt_decode(token);
   const [form] = Form.useForm();
-
+  console.log(decodedToken)
   const showModal = () => {
     setIsModalOpen(true);
   };
