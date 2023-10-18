@@ -8,19 +8,20 @@
         "video_description":"How to perform CPR - A Step-by-Step Guide",
         "quizzes": [
           {
-            "question": "What is the recommended compression depth for adult CPR?",
+            "id":1
+,            "question": "What is the recommended compression depth for adult CPR?",
             "options": ["2 inches", "4 inches", "6 inches", "8 inches"],
-            "correct_answer": 0
+            "correct_answer": "2 inches"
           },
           {
             "question": "How many rescue breaths should be given in adult CPR after chest compressions?",
             "options": ["1", "2", "4", "6"],
-            "correct_answer": 1
+            "correct_answer": "2"
           },
           {
             "question": "What is the correct hand placement for chest compressions in infant CPR?",
             "options": ["Lower half of the breastbone", "Upper half of the breastbone", "Just above the navel", "Center of the chest"],
-            "correct_answer": 0
+            "correct_answer": "Lower half of the breastbone"
           }
         ]
       },
@@ -34,17 +35,17 @@
           {
             "question": "What is the compression depth for child CPR?",
             "options": ["1 inch", "2 inches", "3 inches", "4 inches"],
-            "correct_answer": 1
+            "correct_answer": "2 inches"
           },
           {
             "question": "At what rate should chest compressions be delivered in child CPR?",
             "options": ["60-80 per minute", "100-120 per minute", "120-140 per minute", "150-180 per minute"],
-            "correct_answer": 1
+            "correct_answer": "100-120 per minute"
           },
           {
             "question": "What is the recommended compression-to-ventilation ratio for child CPR?",
             "options": ["15:2", "30:2", "5:1", "10:1"],
-            "correct_answer": 0
+            "correct_answer": "15:2"
           }
         ]
       },
@@ -57,18 +58,18 @@
         "quizzes": [
           {
             "question": "What is the correct hand placement for chest compressions in infant CPR?",
-            "options": ["Lower half of the breastbone", "Upper half of the breastbone", "Just above the navel", "Center of the chest"],
-            "correct_answer": 0
+            "options": ["Center of the chest","Lower half of the breastbone", "Upper half of the breastbone", "Just above the navel"],
+            "correct_answer": "Lower half of the breastbone"
           },
           {
             "question": "How deep should chest compressions be in infant CPR?",
             "options": ["1/2 inch", "1 inch", "1.5 inches", "2 inches"],
-            "correct_answer": 1
+            "correct_answer": "1 inch"
           },
           {
             "question": "What is the recommended compression-to-ventilation ratio for infant CPR?",
             "options": ["15:2", "30:2", "5:1", "10:1"],
-            "correct_answer": 2
+            "correct_answer": "5:1"
           }
         ]
       },
@@ -82,7 +83,7 @@
           {
             "question": "What is the first step in assisting a choking victim?",
             "options": ["Perform abdominal thrusts", "Call 911", "Encourage them to cough", "Administer CPR"],
-            "correct_answer": 2
+            "correct_answer": "Encourage them to cough"
           },
           {
             "question": "What is the recommended method for back blows in choking first aid?",
@@ -92,7 +93,7 @@
           {
             "question": "When should you start CPR on a choking victim?",
             "options": ["Immediately", "After three back blows", "After five abdominal thrusts", "Only if they become unresponsive"],
-            "correct_answer": 3
+            "correct_answer":  "Five back blows followed by chest thrusts"
           }
         ]
       },
@@ -106,17 +107,17 @@
           {
             "question": "What is a common certification organization for CPR training?",
             "options": ["CPR International", "Toronto FC CPR Division", "American Heart Association", "CPR Toronto Certification"],
-            "correct_answer": 2
+            "correct_answer": "American Heart Association"
           },
           {
             "question": "How often should you renew your CPR certification?",
             "options": ["Every 10 years", "Every 5 years", "Every 2 years", "Certification never expires"],
-            "correct_answer": 2
+            "correct_answer": "Every 2 years"
           },
           {
             "question": "What is the purpose of a practical assessment in CPR certification?",
             "options": ["To learn theoretical concepts", "To demonstrate practical skills", "To review certification policies", "To take a written exam"],
-            "correct_answer": 1
+            "correct_answer": "To demonstrate practical skills"
           }
         ]
       }

@@ -12,7 +12,6 @@ router.post("/signup", async (req, res) => {
     if (dublicateData) {
       res.status(400).json({ message: "Email already exist" });
     } else {
-      console.log("nepatma")
       const data = new Model({
         fullname: req.body.fullname,
         email: req.body.email,
