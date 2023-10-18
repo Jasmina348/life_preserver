@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
     email: {
-        required: true,
+         required: true,
         type: String
     },
     password: {

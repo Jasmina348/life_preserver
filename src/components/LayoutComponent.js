@@ -58,6 +58,7 @@ const LayoutComponent = () => {
     getItem(<Link to="/contactus">Contact Us</Link>, "5"),
     getItem(<span onClick={() => handleLogout()}>LogOut</span>),
   ];
+
   return (
     <Layout>
       <Header>
