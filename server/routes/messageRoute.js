@@ -8,14 +8,13 @@ router.post("/message", async (req, res) => {
     const data = new Model({
       user: req.body.user,
       message: req.body.message,
-      date: req.body.date,
+      date: new Date(),
     });
     const dataToSave = await data.save();
     const list = await Model.find();
 
-    res.status(200).json({
-      data: list,
-    });
+    res.status(200).json(
+     list);
   } catch (error) {
     console.log("message", error);
   }

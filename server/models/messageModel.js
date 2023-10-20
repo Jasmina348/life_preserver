@@ -12,7 +12,7 @@ const dataSchema = new mongoose.Schema({
     },
     date:{
         required:true,
-        type: Date
+        type:Date
     }
 })
 

@@ -6,6 +6,8 @@ const mongoString ="mongodb://127.0.0.1:27017/LifePreserver";
 const userRouter = require('./routes/userRoute');
 const contactRoute = require('./routes/contactRoute')
 const taskRoute = require('./routes/taskRoute')
+const messageRoute = require('./routes/messageRoute')
+
 
 
 
@@ -27,6 +29,8 @@ app.use(express.json());
 app.use('/api', userRouter)
 app.use('/api', contactRoute)
 app.use('/api',taskRoute)
+app.use('/api',messageRoute)
+
 
 
 
