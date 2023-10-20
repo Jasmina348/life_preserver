@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../static/data/data.json";
-import { Row, Col, Button, Radio, Form, Space, Modal, Result } from "antd";
+import { Row, Col, Button, Radio, Form, Space, Modal, Result ,Progress} from "antd";
 import { SmileOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
 import "./quizpagecss.css";
@@ -91,8 +91,8 @@ export default function QuizPage() {
           onCancel={() => setIsModalOpen(false)}
         >
           <Result
-            icon={<SmileOutlined />}
-            title={`You earned ` + result.toFixed(2) + "%"}
+            icon={ <Progress type="circle" percent={result.toFixed(2)} />}
+            title={result<50? "You can do better ":'WELL DONE!!' }
             extra={
               <Button type="primary" onClick={() => cancelModal()}>
                 Next
