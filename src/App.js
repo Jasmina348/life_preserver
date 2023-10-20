@@ -12,12 +12,13 @@ import Certificate from "./components/Certificate";
 
 export default function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         
-        <Route path="/" element={<LayoutComponent />}>
+        <Route path="/layout" element={<LayoutComponent />}>
           <Route index element={<ContentPage />} />
           <Route path="courses" element={<PrivateRoute  element={<ContentPage/>}/>} />
           <Route path="module/:id" element={<PrivateRoute element={<ModulePage/>} />}/>
