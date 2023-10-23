@@ -9,6 +9,7 @@ import QuizPage from './containers/QuizPage'
 import PrivateRoute from "./components/PrivateRoute";
 import ContactUsPage from "./containers/ContactUsPage";
 import Certificate from "./components/Certificate";
+import MyLearningPage from "./containers/MyLearningPage";
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
           <Route path="quiz/:id" element={<PrivateRoute element={<QuizPage/>} />}/>
           <Route path="contactus" element={<ContactUsPage/>}/>
           <Route path='/certificate' element={<Certificate/>}/>
+          <Route path='/mylearning' element={<MyLearningPage/>}/>
+
         </Route>
       </Routes>
     </BrowserRouter>

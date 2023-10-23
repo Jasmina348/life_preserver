@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   HomeOutlined,
   BookOutlined,
   MessageOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import logo from "../static/images/LifePreserver.png";
 import data from "../static/data/courseData.json";
 
 import { Layout, Menu, Button, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 const LayoutComponent = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const decodedToken = jwt_decode(window.sessionStorage.getItem("token"));
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -51,7 +50,7 @@ const LayoutComponent = () => {
   ];
   const items1 = [
     getItem(<Link to="/">Courses</Link>, "1"),
-    getItem(<Link to="/contactus">My Learning</Link>, "2"),
+    getItem(<Link to="/mylearning">My Learning</Link>, "2"),
     getItem(<Link to="/contactus">Contact Us</Link>, "3"),
     getItem(<span onClick={() => handleLogout()}>LogOut</span>),
   ];
@@ -59,7 +58,9 @@ const LayoutComponent = () => {
   return (
     <Layout>
       <Header>
-        <span style={{ fontSize: "20px", color: "white" }}>Jasmina</span>
+        <span style={{ fontSize: "20px", color: "white" }}>
+          {decodedToken.fullname}
+        </span>
         <Menu
           style={{ float: "right" }}
           theme="dark"
@@ -67,20 +68,19 @@ const LayoutComponent = () => {
           items={items1}
         />
       </Header>
-      <Layout> 
-          <Content
-            style={{
-              margin: "24px 16px",
-              padding: 24,
-              minHeight: 500,
-              // background: colorBgContainer,
-            }}
-          >
-            <Outlet />
-          </Content>
-        </Layout>
+      <Layout>
+        <Content
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            minHeight: 500,
+            // background: colorBgContainer,
+          }}
+        >
+          <Outlet />
+        </Content>
       </Layout>
-
+    </Layout>
   );
 };
 export default LayoutComponent;

@@ -13,6 +13,7 @@ router.post("/contactus", async (req, res) => {
 
       });
       const dataToSave = await data.save();
+      res.status(200).json(dataToSave);
     }catch (error) {
       console.log("message",error );
     }

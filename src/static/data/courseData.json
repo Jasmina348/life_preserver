@@ -63,8 +63,8 @@
       "description": "The Advanced CPR training course provides in-depth knowledge and practical skills in advanced life support techniques, including advanced airway management, medication administration, and defibrillation, to prepare healthcare professionals for complex cardiac emergencies.",
       "modules": [
         {
-          "id": 3,
-          "module_title": "Module 3: CPR for Infants",
+          "id": 1,
+          "module_title": "Module 1: CPR for Infants",
           "description": "This module is dedicated to the specialized techniques required for performing CPR on infants. From the correct hand placement for chest compressions to the ideal depth of compressions and the recommended compression-to-ventilation ratio, you will become adept at infant CPR. Additionally, you'll learn about infant airway management, an essential aspect of infant resuscitation.",
           "video_link": "https://www.youtube.com/watch?v=gHZdBY-CkGw",
           "video_description": "How to perform first aid and CPR on a choking infant / baby?",
@@ -88,8 +88,8 @@
           ]
         },
         {
-          "id": 4,
-          "module_title": "Module 4: CPR for Choking",
+          "id": 2,
+          "module_title": "Module 2: CPR for Choking",
           "description": "Module 4 focuses on assisting choking victims. You'll learn to recognize the signs of choking and how to respond effectively. Explore techniques such as back blows and chest thrusts and understand when to transition to CPR if the victim becomes unresponsive. This knowledge is invaluable in situations where quick action can save a life.",
           "video_link": "https://www.youtube.com/watch?v=06WXCWDaJps",
           "video_description": "Conscious Adult Choking Practice",
@@ -120,8 +120,8 @@
       "description": "First Aid and CPR Training for Toronto FC provides comprehensive, customized courses designed to equip the team and staff with the essential skills to respond to injuries and medical emergencies, ensuring the safety and well-being of players on and off the field",
       "modules": [
         {
-          "id": 5,
-          "module_title": "Module 5: Basic First Aid and CPR/AED Certification Course",
+          "id": 1,
+          "module_title": "Module 1: Basic First Aid and CPR/AED Certification Course",
           "description": "This course covers fundamental first aid techniques, such as wound care, fracture stabilization, and choking response.CPR/AED training is included to teach participants how to perform cardiopulmonary resuscitation and use an automated external defibrillator (AED) in case of sudden cardiac arrest.",
           "video_link": "https://www.youtube.com/watch?v=xoXZCDH2bIU",
           "video_description": "2023 CPR & AED Refresher Course with Nurse Eunice [Adult, Child, and Infant]",
@@ -146,8 +146,8 @@
           ]
         },
         {
-          "id": 6,
-          "module_title": "Module 6:Injury Prevention Course",
+          "id": 2,
+          "module_title": "Module 2:Injury Prevention Course",
           "description": "An Injury Prevention Course focuses on teaching participants strategies and techniques to reduce the risk of common sports-related injuries, emphasizing proactive measures to enhance safety during physical activities.",
           "video_link": "https://www.youtube.com/watch?v=X5YyunLZzBc",
           "video_description": "Injury Prevention Program",

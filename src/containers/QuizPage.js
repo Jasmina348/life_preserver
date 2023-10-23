@@ -35,6 +35,7 @@ export default function QuizPage() {
             progress: {
               quiz_attempt: 1,
               score: score,
+              module:id
             },
           }),
         }
