@@ -19,14 +19,14 @@ export default function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         
-        <Route path="/layout" element={<LayoutComponent />}>
+        <Route path="/" element={<LayoutComponent />}>
           <Route index element={<ContentPage />} />
-          <Route path="courses" element={<PrivateRoute  element={<ContentPage/>}/>} />
+          {/* <Route path="courses" element={<PrivateRoute  element={<ContentPage/>}/>} /> */}
           <Route path="module/:id" element={<PrivateRoute element={<ModulePage/>} />}/>
           <Route path="quiz/:id" element={<PrivateRoute element={<QuizPage/>} />}/>
           <Route path="contactus" element={<ContactUsPage/>}/>
-          <Route path='/certificate' element={<Certificate/>}/>
-          <Route path='/mylearning' element={<MyLearningPage/>}/>
+          <Route path='certificate' element={<Certificate/>}/>
+          <Route path='mylearning' element={<MyLearningPage/>}/>
 
         </Route>
       </Routes>

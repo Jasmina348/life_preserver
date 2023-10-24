@@ -1,7 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom'
+import jwt_decode from "jwt-decode";
 import './certificate.css'
 
 export default function Certificate() {
+  const location = useLocation()
+  const decodedToken = jwt_decode(window.sessionStorage.getItem("token"));
+  const data=location.state;
   return (
     <div class="container pm-certificate-container">
     <div class="outer-border"></div>
@@ -21,7 +26,7 @@ export default function Certificate() {
               <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="pm-certificate-name underline margin-0 col-xs-8 text-center">
-                  <span class="pm-name-text bold">Tanka Prasad Tiwari</span>
+                  <span class="pm-name-text bold">{decodedToken.fullname}</span>
                 </div>
                 <div class="col-xs-2"></div>
               </div>
@@ -32,7 +37,7 @@ export default function Certificate() {
                 <div class="col-xs-2"></div>
                 <div class="pm-earned col-xs-8 text-center">
                   <span class="pm-earned-text padding-0 block cursive" style={{fontSize:20}}>has earned</span>
-                  <span class="pm-credits-text block bold sans">CPL5559: 10.0 Credit Hours</span>
+                  <span class="pm-credits-text block bold sans">{data.score} Percentage</span>
                 </div>
                 <div class="col-xs-2"></div>
                 <div class="col-xs-12"></div>
@@ -53,7 +58,7 @@ export default function Certificate() {
               <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="pm-course-title underline col-xs-8 text-center">
-                  <span class="pm-credits-text block bold sans">Doing Project with Jasmina Bahadur</span>
+                  <span class="pm-credits-text block bold sans">{data.module_title}</span>
                 </div>
                 <div class="col-xs-2"></div>
               </div>

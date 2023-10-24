@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../static/data/data.json";
 import { Row, Col, Button, Radio, Form, Space, Modal, Result ,Progress} from "antd";
 import { SmileOutlined } from "@ant-design/icons";
@@ -95,9 +95,11 @@ export default function QuizPage() {
             icon={ <Progress type="circle" percent={result.toFixed(2)} />}
             title={result<50? "You can do better ":'WELL DONE!!' }
             extra={
+              [
               <Button type="primary" onClick={() => cancelModal()}>
                 Next
-              </Button>
+              </Button>,
+               <Button key="buy"><Link to="/certificate" state={{module_title:item.module_title,score}}>View Certificate</Link></Button>]
             }
           />
         </Modal>
