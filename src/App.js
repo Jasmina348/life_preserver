@@ -7,7 +7,7 @@ import LayoutComponent from "./components/LayoutComponent";
 import ModulePage from "./containers/ModulePage";
 import QuizPage from './containers/QuizPage'
 import PrivateRoute from "./components/PrivateRoute";
-import ContactUsPage from "./containers/ContactUsPage";
+import ContactUsPage from "./contaviners/ContactUsPage";
 import Certificate from "./components/Certificate";
 
 export default function App() {
