@@ -5,7 +5,7 @@ import LoginPage from "./containers/LoginPage";
 import RegisterPage from "./containers/RegisterPage";
 import LayoutComponent from "./components/LayoutComponent";
 import ModulePage from "./containers/ModulePage";
-import QuizPage from './containers/QuizPage'
+// import QuizPage from './containers/QuizPage'
 import PrivateRoute from "./components/PrivateRoute";
 import ContactUsPage from "./containers/ContactUsPage";
 import Certificate from "./components/Certificate";
@@ -23,7 +23,7 @@ export default function App() {
           <Route index element={<ContentPage />} />
           {/* <Route path="courses" element={<PrivateRoute  element={<ContentPage/>}/>} /> */}
           <Route path="module/:id" element={<PrivateRoute element={<ModulePage/>} />}/>
-          <Route path="quiz/:id" element={<PrivateRoute element={<QuizPage/>} />}/>
+          {/* <Route path="quiz/:id" element={<PrivateRoute element={<QuizPage/>} />}/> */}
           <Route path="contactus" element={<ContactUsPage/>}/>
           <Route path='certificate' element={<Certificate/>}/>
           <Route path='mylearning' element={<MyLearningPage/>}/>

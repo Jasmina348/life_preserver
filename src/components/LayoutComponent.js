@@ -15,7 +15,9 @@ const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 const LayoutComponent = () => {
-  const decodedToken = jwt_decode(window.sessionStorage.getItem("token"));
+  let decodedToken="";
+
+  //  decodedToken = jwt_decode(window.sessionStorage.getItem("token"));
 
   const {
     token: { colorBgContainer },
